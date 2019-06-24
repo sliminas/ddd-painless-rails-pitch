@@ -1,6 +1,6 @@
 ## DDD / Painless Rails
 
-what we could use to make our code better
+What we could use to improve our code
 
 ---
 
@@ -46,6 +46,7 @@ end
 ---
 ### Top-level Controller namespaces based on a way of usage
 ---
+
 @snap[north-west span-33]
 ![ApplicationController1](assets/img/app_con1.png)
 @snapend
@@ -55,6 +56,9 @@ end
 @snap[north-east span-33]
 ![ApplicationController1](assets/img/app_con3.png)
 @snapend
+
+---
+
 @snap[north-west span-33]
 ![ApplicationController1](assets/img/app_con4.png)
 @snapend
@@ -63,14 +67,58 @@ end
 @snapend
 
 ---
-api, feeds, web, report
-one base controller per namespace
+### Top-level Controller namespaces
+
+@ol
+- based on a way of usage
+- one base controller per namespace
+@olend
+
+@ol
+- api
+- feeds
+- web
+- report
+@olend
+
+
 ---
-### Top-level namespaces based on a way of usage
+### Top-level namespaces per bounded context
 Marketing::ProductsController
 Warehouse::ProductsController
 ---
-### Nested controllers with route
+### Multiple Nested Controllers
 
+Problem:
+
+@ol
+- view for all posts
+- view for posts of specific user
+@elend
+
+@ol
+- `PostsController#index`
+- `PostsController#index_all`
+- `PostsController#user_index`
+@olend
+
+@ol
+- `PostsController#index`
+- `Users::PostsController#index`
+@olend
+
+---
+```ruby
+resources :posts, only: [:index, :show]
+resources :users, only: [:show] do
+  scope module: :users do
+    resources :posts, only: [:index]
+  end
+end
+```
+---
+
+![NestedController1]('assets/img/nested_con1.png')
+![NestedController2]('assets/img/nested_con2.png')
 ---
 # __The End__
