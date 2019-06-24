@@ -133,32 +133,7 @@ end
 ![NestedController2](assets/img/nested_con2.png)
 
 ---
-@css[text-07](
-
-```ruby
-scope module: :web do
-  namespace :moderation do
-    resources :articles, only: [:index, :edit, :update, :show] do
-      member do
-        patch :publish
-      end
-    end
-  end
-  resources :articles do
-    member do
-      patch :moderate
-    end
-    scope module: :articles do
-      resources :comments do
-        scope module: :comments do
-          resources :likes, only: [:create]
-        end
-      end
-    end
-  end
-end
-```
-)
+![structure_summary](assets/img/structure_summary.png)
 ---
 ## 3 Strategies Combined
 ![controller_structure](assets/img/controller_structure.png)
