@@ -45,7 +45,7 @@ end
 ![Logo](assets/img/models.png)
 
 ---
-## Top-level Controllers based on a way of usage
+## Top-level Controllers
 ---
 
 @snap[north-west span-33]
@@ -68,9 +68,11 @@ end
 @snapend
 
 ---
+@snap[north span-40]
 ## Top-level Controllers
+@snapend
 
-@snap[west span-40]
+@snap[southwest span-40]
   @ol
   - based on a way of usage
   - one base controller per namespace
@@ -78,7 +80,7 @@ end
 @snapend
 
 
-@snap[east span-40]
+@snap[southeast span-40]
   @ol
   - api
   - feeds
