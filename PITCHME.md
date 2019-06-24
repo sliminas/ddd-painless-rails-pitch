@@ -102,18 +102,18 @@ end
 
 Problem:
 
-@ul
+@ul[list-box]
 - view for all posts
 - view for posts of specific user
 @ulend
-
-@ul
+---
+@ul[list-box]
 - `PostsController#index`
 - `PostsController#index_all`
 - `PostsController#user_index`
 @ulend
-
-@ul
+---
+@ul[list-box]
 - `PostsController#index`
 - `Users::PostsController#index`
 @ulend
@@ -133,6 +133,7 @@ end
 ![NestedController2](assets/img/nested_con2.png)
 
 ---
+@css[text-07](
 
 ```ruby
 scope module: :web do
@@ -157,6 +158,7 @@ scope module: :web do
   end
 end
 ```
+)
 ---
 ## 3 Strategies Combined
 ![controller_structure](assets/img/controller_structure.png)
