@@ -6,18 +6,19 @@ What we could use to improve our code
 
 ## Content
 
-@ol
+@ul
 
 - Semantic model naming
 - Top-level Controller namespaces
 - Controller namespace per bounded context
-- Nested controllers with route
+- Nested Controllers
+- Multiple ApplicationControllers
 
-@olend
+@ulend
 
 ---
 
-### Semantic model naming
+## Semantic model naming
 ```ruby
 class Shop < ActiveRecord
 end
@@ -28,7 +29,7 @@ end
 
 ---
 
-### Semantic model naming
+## Semantic model naming
 ```ruby
 class Partner::Shop < ActiveRecord
 end
@@ -39,12 +40,12 @@ end
 
 ---
 
-### Semantic model naming
+## Semantic model naming
 
 ![Logo](assets/img/models.png)
 
 ---
-### Top-level Controller namespaces based on a way of usage
+## Top-level Controller namespaces based on a way of usage
 ---
 
 @snap[north-west span-33]
@@ -67,45 +68,63 @@ end
 @snapend
 
 ---
-### Top-level Controller namespaces
+## Top-level Controller namespaces
 
-@ol
-- based on a way of usage
-- one base controller per namespace
-@olend
+@snap[west span-40]
+  @ol
+  - based on a way of usage
+  - one base controller per namespace
+  @olend
+@snapend
 
-@ol
-- api
-- feeds
-- web
-- report
-@olend
 
+@snap[east span-40]
+  @ol
+  - api
+  - feeds
+  - web
+  - report
+  @olend
+@snapend
 
 ---
-### Top-level namespaces per bounded context
-Marketing::ProductsController
-Warehouse::ProductsController
+## Top-level namespaces per bounded context
+
+```ruby
+resource :products
+
+namespace :marketing do
+  resource :products
+end
+
+namespace :warehouse do
+  resource :products
+end
+
+namespace :support do
+  resource :products
+end
+```
 ---
-### Multiple Nested Controllers
+## Multiple Nested Controllers
 
 Problem:
 
-@ol
+@ul
 - view for all posts
 - view for posts of specific user
-@elend
+@ulend
 
-@ol
+@ul
 - `PostsController#index`
 - `PostsController#index_all`
 - `PostsController#user_index`
-@olend
+@ulend
 
-@ol
+@ul
 - `PostsController#index`
 - `Users::PostsController#index`
-@olend
+@ulend
 
 ---
 ```ruby
@@ -118,7 +137,42 @@ end
 ```
 ---
 
-![NestedController1]('assets/img/nested_con1.png')
-![NestedController2]('assets/img/nested_con2.png')
+![NestedController1](assets/img/nested_con1.png)
+![NestedController2](assets/img/nested_con2.png)
+
 ---
-# __The End__
+
+```ruby
+scope module: :web do
+  namespace :moderation do
+    resources :articles, only: [:index, :edit, :update, :show] do
+      member do
+        patch :publish
+      end
+    end
+  end
+  resources :articles do
+    member do
+      patch :moderate
+    end
+    scope module: :articles do
+      resources :comments do
+        scope module: :comments do
+          resources :likes, only: [:create]
+        end
+      end
+    end
+  end
+end
+```
+---
+## 3 Strategies Combined
+![controller_structure](assets/img/controller_structure.png)
+---
+## Multiple ApplicationControllers
+
+![inheriting_application_controllers](assets/img/inheriting_app_cons.png)
+![application_controller_structure](assets/img/app_con_structure.png)
+
+---
+# The End
