@@ -1,10 +1,10 @@
-# DDD / Painless Rails
+## DDD / Painless Rails
 
 what we could use to make our code better
 
 ---
 
-# Content
+## Content
 
 @ol
 
@@ -17,11 +17,8 @@ what we could use to make our code better
 
 ---
 
-@snap[north span-100 text-20 text-blue]
-Semantic naming of models
-@snapend
+### Semantic naming of models
 ---
-@snap[west span-50]
 ```ruby
 class Shop < ActiveRecord
 end
@@ -29,9 +26,16 @@ end
 class Sale < ActiveRecord
 end
 ```
-@snapend
 
-@snap[east span-50]
+---
+### Semantic naming of models
+```ruby
+class Shop < ActiveRecord
+end
+
+class Sale < ActiveRecord
+end
+```
 ```ruby
 class Partner::Shop < ActiveRecord
 end
@@ -39,16 +43,7 @@ end
 class Partner::Sale < ActiveRecord
 end
 ```
-@snapend
 
----
-```ruby
-class Shop < ActiveRecord
-end
-
-class Sale < ActiveRecord
-end
-```
 ---
 Controller toplevel namespacing by usecase
 api, feeds, web, report
