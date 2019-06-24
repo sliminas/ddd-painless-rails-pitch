@@ -68,7 +68,7 @@ end
 @snapend
 
 ---
-@snap[north span-40]
+@snap[north span-100]
 ## Top-level Controllers
 @snapend
 
