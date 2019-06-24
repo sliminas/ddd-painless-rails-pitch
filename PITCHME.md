@@ -9,7 +9,7 @@ what we could use to make our code better
 @ol
 
 - Semantic model naming
-- Controller toplevel namespaces
+- Top-level Controller namespaces
 - Controller namespace per bounded context
 - Nested controllers with route
 
@@ -17,8 +17,7 @@ what we could use to make our code better
 
 ---
 
-### Semantic naming of models
----
+### Semantic model naming
 ```ruby
 class Shop < ActiveRecord
 end
@@ -28,14 +27,8 @@ end
 ```
 
 ---
-### Semantic naming of models
-```ruby
-class Shop < ActiveRecord
-end
 
-class Sale < ActiveRecord
-end
-```
+### Semantic model naming
 ```ruby
 class Partner::Shop < ActiveRecord
 end
@@ -45,15 +38,39 @@ end
 ```
 
 ---
-Controller toplevel namespacing by usecase
+
+### Semantic model naming
+
+![Logo](assets/img/models.png)
+
+---
+### Top-level Controller namespaces based on a way of usage
+---
+@snap[north-west span-50]
+![ApplicationController1](assets/img/app_con1.png)
+@snapend
+@snap[north-east span-50]
+![ApplicationController1](assets/img/app_con2.png)
+@snapend
+@snap[north-east span-50]
+![ApplicationController1](assets/img/app_con3.png)
+@snapend
+@snap[north-east span-50]
+![ApplicationController1](assets/img/app_con4.png)
+@snapend
+@snap[north-east span-50]
+![ApplicationController1](assets/img/app_con5.png)
+@snapend
+
+---
 api, feeds, web, report
 one base controller per namespace
 ---
-Controller namespace per bounded context
+### Top-level namespaces based on a way of usage
 Marketing::ProductsController
 Warehouse::ProductsController
 ---
-Nested controllers with route
+### Nested controllers with route
 
 ---
 # __The End__
