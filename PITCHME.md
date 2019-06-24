@@ -9,10 +9,10 @@ What we could use to improve our code
 @ul
 
 - Semantic model naming
-- Top-level Controller namespaces
-- Controller namespace per bounded context
+- Top-level Controllers
+- Bounded Context Controllers
 - Nested Controllers
-- Multiple ApplicationControllers
+- ApplicationControllers
 
 @ulend
 
@@ -45,7 +45,7 @@ end
 ![Logo](assets/img/models.png)
 
 ---
-## Top-level Controller namespaces based on a way of usage
+## Top-level Controllers based on a way of usage
 ---
 
 @snap[north-west span-33]
@@ -68,7 +68,7 @@ end
 @snapend
 
 ---
-## Top-level Controller namespaces
+## Top-level Controllers
 
 @snap[west span-40]
   @ol
@@ -88,7 +88,7 @@ end
 @snapend
 
 ---
-## Top-level namespaces per bounded context
+## Bounded Context Controllers
 
 ```ruby
 resource :products
@@ -106,7 +106,7 @@ namespace :support do
 end
 ```
 ---
-## Multiple Nested Controllers
+## Nested Controllers
 
 Problem:
 
