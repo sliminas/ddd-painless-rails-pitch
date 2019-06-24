@@ -17,8 +17,8 @@ what we could use to make our code better
 
 ---
 
-@snap[north span-100 text-blue]
-#### Semantic naming of models
+@snap[north span-100 text-20 text-blue]
+Semantic naming of models
 @snapend
 
 @snap[west span-50 text-05]
@@ -45,6 +45,14 @@ end
 
 @snapend
 
+---
+```ruby
+class Shop < ActiveRecord
+end
+
+class Sale < ActiveRecord
+end
+```
 ---
 Controller toplevel namespacing by usecase
 api, feeds, web, report
