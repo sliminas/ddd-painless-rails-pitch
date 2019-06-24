@@ -20,9 +20,8 @@ what we could use to make our code better
 @snap[north span-100 text-20 text-blue]
 Semantic naming of models
 @snapend
-
-@snap[west span-50 text-05]
-
+---
+@snap[west span-50]
 ```ruby
 class Shop < ActiveRecord
 end
@@ -30,11 +29,9 @@ end
 class Sale < ActiveRecord
 end
 ```
-
 @snapend
 
-@snap[east span-50 text-05]
-
+@snap[east span-50]
 ```ruby
 class Partner::Shop < ActiveRecord
 end
@@ -42,7 +39,6 @@ end
 class Partner::Sale < ActiveRecord
 end
 ```
-
 @snapend
 
 ---
