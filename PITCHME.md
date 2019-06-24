@@ -46,19 +46,19 @@ end
 ---
 ### Top-level Controller namespaces based on a way of usage
 ---
-@snap[north-west span-50]
+@snap[north-west span-20]
 ![ApplicationController1](assets/img/app_con1.png)
 @snapend
-@snap[north-east span-50]
+@snap[north-west span-20]
 ![ApplicationController1](assets/img/app_con2.png)
 @snapend
-@snap[north-east span-50]
+@snap[north-west span-20]
 ![ApplicationController1](assets/img/app_con3.png)
 @snapend
-@snap[north-east span-50]
+@snap[north-west span-20]
 ![ApplicationController1](assets/img/app_con4.png)
 @snapend
-@snap[north-east span-50]
+@snap[north-west span-20]
 ![ApplicationController1](assets/img/app_con5.png)
 @snapend
 
