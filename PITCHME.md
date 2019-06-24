@@ -68,26 +68,16 @@ end
 @snapend
 
 ---
-@snap[north span-100]
 ## Top-level Controllers
-@snapend
 
-@snap[southwest span-40]
-  @ol
-  - based on a way of usage
-  - one base controller per namespace
-  @olend
-@snapend
-
-
-@snap[southeast span-40]
-  @ol
-  - api
-  - feeds
-  - web
-  - report
-  @olend
-@snapend
+@ol
+- based on a way of usage
+- one base controller per namespace
+- api
+- feeds
+- web
+- report
+@olend
 
 ---
 ## Bounded Context Controllers
