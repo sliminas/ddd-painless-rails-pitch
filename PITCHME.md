@@ -17,11 +17,11 @@ what we could use to make our code better
 
 ---
 
-@snap[north span-10]
-# Semantic naming of models
+@snap[north span-100]
+#### Semantic naming of models
 @snapend
 
-@snap[west span-40]
+@snap[west span-50 text-05]
 
 ```ruby
 class Shop < ActiveRecord
@@ -34,7 +34,7 @@ end
 
 @snapend
 
-@snap[east span-40]
+@snap[east span-50 text-05]
 
 ```ruby
 class Partner::Shop < ActiveRecord
